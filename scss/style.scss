@@ -70,17 +70,39 @@ html, body {
           >.icons, .search-bar, .navigation-bar {
             display: flex;
             justify-content: space-between;
-            padding: 2% 6% 0 6%;
+            margin: 2.5% 6% 0 6%;
           }
           >.icons {
             flex: 1.25;
           }
           >.search-bar {
             flex: 1;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-radius: 100vh;
+            padding: 0 3%;
+            color: white;
+            background-color: rgba(white, .5);
+            >.google-logo, .voice-search {
+              display: flex;
+              cursor: pointer;
+            }
+            >.google-logo {
+              display: flex;
+              >img {
+                flex: 1;
+              }
+            }
+            >.voice-search {
+              >i.material-icons {
+                font-size: 2.5vh;
+              }
+            }
           }
           >.navigation-bar {
             flex: .75;
-            padding: 0;
+            margin-bottom: 1%;
             display: flex;
             align-items: center;
             justify-content: center;
