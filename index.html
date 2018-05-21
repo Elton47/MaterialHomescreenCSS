@@ -20,7 +20,15 @@
           <li class="wifi"><i class="material-icons">network_wifi</i></li>
           <li class="cellular"><i class="material-icons">network_cell</i></li>
           <li class="battery"><i class="material-icons">battery_full</i></li>
-          <li class="clock"><small>20</small>&nbsp;21:42</li>
+          <li class="clock">
+            <script>
+              setDateAndTime();
+              function setDateAndTime() {
+                document.querySelector('.clock').innerHTML = '<small>' + new Date().getDate() + '</small>&nbsp;' + new Date().getUTCHours() + ':' + new Date().getUTCMinutes();
+              }
+              setInterval(setDateAndTime, 60000);
+            </script>
+          </li>
         </ul>
       </div>
       <div class="launcher">
@@ -32,7 +40,7 @@
             
           </div>
           <div class="arrow">
-            <i class="material-icons">keyboard_arrow_up</i>
+            <i class="material-icons" onclick="document.querySelector('.launcher').classList.toggle('expanded');">keyboard_arrow_up</i>
           </div>
         </div>
         <div class="dock">
@@ -55,8 +63,8 @@
           </div>
           <div class="navigation-bar">
             <ul class="navigation-icons">
-              <li class="back"></li>
-              <li class="home"></li>
+              <li class="back" onclick="document.querySelector('.launcher').classList.remove('expanded');"></li>
+              <li class="home" onclick="document.querySelector('.launcher').classList.remove('expanded');"></li>
               <li class="recents"></li>
             </ul>
           </div>
